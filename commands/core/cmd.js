@@ -5,7 +5,7 @@ const { pointright, pointleft, cancel } = require('../../emojis')
 module.exports = {
   config: {
     name: "cmd",
-    aliases: ['commands','command','cmds'],
+    aliases: ['help'],
     guildOnly: true,
     ownerOnly: false,
     adminOnly: false,
@@ -14,7 +14,7 @@ module.exports = {
     cooldown: null,
     group: "core",
     description: "Sends a list of all commands from a specific command group or all commands! Use the reactions to navigate through the panels!",
-    examples: ['cmd anime','commands'],
+    examples: ['help anime','help'],
   	parameters: ['command group']
   },
   run: async (client, message, args) => {
@@ -98,8 +98,8 @@ function embedder({ group, collection }, message, length, index){
   return ( new MessageEmbed()
   .setAuthor(`${ group } commands!`, message.client.user.displayAvatarURL({ format: 'png', dynamic: true}))
   .setDescription(`Use \`${prefix}help [command]\` for more details.`)
-  .setColor(!message.member.displayColor ? 'GREEN' : message.member.displayColor)
-  .setFooter(`Created with ❤ by Sakurajimai#6742 • Page ${index ? index + 1 : '1'} of ${length}`)
+  .setColor(!message.member.displayColor ? 'BLUE' : message.member.displayColor)
+  .setFooter(`Created with ❤ by ZeroTwo♡ • Page ${index ? index + 1 : '1'} of ${length}`)
   .addFields( fields )
 )
 
