@@ -16,7 +16,7 @@ module.exports = {
       msg: "Please limit your usage of this command. [Don't spam this command]"
     },
     group: "bot",
-    description: "Sends a support message to this bot\'s owner (Sakurajimai#6742)",
+    description: "Sends a support message to this bot\'s owner (ZeroTwo♡#2292)",
     examples: ['feedback [bugs, issues, etc]'],
     parameters: ['Feedback message']
   },
