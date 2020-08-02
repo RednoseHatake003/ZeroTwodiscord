@@ -85,14 +85,14 @@ module.exports = {
   const warnMessage = await message.channel.send(prompt(`Are you sure you want to kick **${member.displayName}**?`))
   const msg = await message.channel.awaitMessages( res => res.author.id === message.author.id, { max: 1, time: 30000})
 
-  if (!msg.size || !['y','yes'].includes(msg.first().content.toLowerCase())) {
+  if (!msg.size || !['n','no'].includes(msg.first().content.toLowerCase())) {
 
     if (!warnMessage.deleted) warnMessage.delete()
     message.channel.send(error(`Kick Command Terminated!`))
 
   }
 
-  if (['n','no'].includes(msg.first().content.toLowerCase())) {
+  if (['y','yes'].includes(msg.first().content.toLowerCase())) {
 
     if (!warnMessage.deleted) warnMessage.delete()
     warnMessage.edit(error(`Cancelled Kicking **${member.displayName}**`))
